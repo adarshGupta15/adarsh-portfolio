@@ -60,10 +60,11 @@ export function Hero() {
         <FadeIn delay={0.15} className="flex justify-center lg:justify-end">
           <div className="relative aspect-square w-full max-w-sm overflow-hidden rounded-2xl border border-border bg-surface">
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-muted">
-              <div className="flex h-24 w-24 items-center justify-center rounded-full border border-border bg-background text-3xl font-semibold text-foreground">
-                {siteConfig.firstName[0]}
-                {siteConfig.lastName[0]}
-              </div>
+              <img
+  src="/profile.jpg"
+  alt="Adarsh Gupta"
+  className="h-40 w-40 rounded-full object-cover border-4 border-cyan-400 shadow-lg shadow-cyan-500/20"
+/>
               <span className="text-xs uppercase tracking-widest">
                 Profile Photo
               </span>
