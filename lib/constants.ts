@@ -38,7 +38,7 @@ export const currentlyBuilding: BuildingItem[] = [
 export const skillCategories: SkillCategory[] = [
   {
     name: "Programming",
-    skills: ["Python", "C++"],
+    skills: ["Python", "C++","Java"],
   },
   {
     name: "Machine Learning",
@@ -46,7 +46,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: "Tools",
-    skills: ["Git", "GitHub"],
+    skills: ["Git", "GitHub","VS Code"],
   },
   {
     name: "Core Concepts",

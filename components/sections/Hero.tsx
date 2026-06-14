@@ -65,8 +65,8 @@ export function Hero() {
   alt="Adarsh Gupta"
   className="h-40 w-40 rounded-full object-cover border-4 border-cyan-400 shadow-lg shadow-cyan-500/20"
 />
-              <span className="text-xs uppercase tracking-widest">
-                Profile Photo
+              <span className="text-xs uppercase tracking-widest text-muted">
+                ADARSH GUPTA
               </span>
             </div>
           </div>
