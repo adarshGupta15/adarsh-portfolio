@@ -11,7 +11,7 @@ export const siteConfig = {
   links: {
     github: "https://github.com/adarshGupta15",
     linkedin: "https://linkedin.com/in/adarshgupta151",
-    email: "mailto:ad282242@gmail.com",
+    email:"https://mail.google.com/mail/?view=cm&fs=1&to=ad282242@gmail.com",
     resume: "/resume.pdf",
   },
 };
