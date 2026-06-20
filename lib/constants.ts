@@ -12,7 +12,7 @@ export const siteConfig = {
     github: "https://github.com/adarshGupta15",
     linkedin: "https://linkedin.com/in/adarshgupta151",
     email: "mailto:ad282242@gmail.com",
-    resume: "resume.pdf",
+    resume: "/resume.pdf",
   },
 };
 
