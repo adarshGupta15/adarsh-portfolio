@@ -147,11 +147,12 @@ export const timeline: TimelineItem[] = [
     description: "Studied core data structures and algorithms.",
   },
   {
-    year: "2025",
+    year: "2026",
     title: "Machine Learning Projects",
     description: "Applied Scikit-learn and Flask in machine-learning projects.",
   },
   {
+    year: "2026",
     title: "Web Development & Full-stack Projects",
     description: "Applied Next.js, TypeScript, backend APIs, and databases in project work.",
   },
