@@ -3,13 +3,13 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Adarsh Gupta | Software Engineer",
+  title: "Adarsh Gupta | CSE Student, Machine Learning & Software Development",
   description:
-    "Software Engineer, AI Enthusiast, and B.Tech CSE student building intelligent systems with Python and Machine Learning.",
+    "Portfolio of Adarsh Gupta, a Computer Science & Engineering student at AKGEC focused on software development, machine learning, and problem solving.",
   openGraph: {
-    title: "Adarsh Gupta | Software Engineer",
+    title: "Adarsh Gupta | Machine Learning & Software Development",
     description:
-      "Portfolio of Adarsh Gupta — ML projects, full-stack work, and continuous learning.",
+      "Computer Science & Engineering student at AKGEC building software, machine learning, and full-stack projects.",
     type: "website",
   },
 };

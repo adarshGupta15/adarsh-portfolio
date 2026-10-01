@@ -1,8 +1,13 @@
 export interface Project {
   title: string;
-  description: string;
+  summary: string;
+  problem: string;
+  solution: string;
+  implementation: string[];
   tech: string[];
-  githubUrl: string;
+  featured?: boolean;
+  githubUrl?: string;
+  liveUrl?: string;
   image?: string;
 }
 
@@ -12,7 +17,7 @@ export interface SkillCategory {
 }
 
 export interface TimelineItem {
-  year: string;
+  year?: string;
   title: string;
   description?: string;
 }

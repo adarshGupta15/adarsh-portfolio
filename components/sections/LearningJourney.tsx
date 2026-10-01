@@ -17,9 +17,11 @@ export function LearningJourney() {
           <FadeIn key={`${item.year}-${item.title}`} delay={i * 0.06}>
             <div className="relative pb-10 last:pb-0">
               <span className="absolute -left-[2.55rem] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-accent bg-background sm:-left-[2.85rem]" />
-              <p className="text-xs font-medium uppercase tracking-wider text-accent">
-                {item.year}
-              </p>
+              {item.year && (
+                <p className="text-xs font-medium uppercase tracking-wider text-accent">
+                  {item.year}
+                </p>
+              )}
               <h3 className="mt-1 text-base font-semibold text-foreground sm:text-lg">
                 {item.title}
               </h3>

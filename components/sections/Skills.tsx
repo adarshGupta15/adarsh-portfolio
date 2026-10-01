@@ -13,7 +13,7 @@ export function Skills() {
         subtitle="Technologies and concepts I use to design, build, and ship software."
       />
 
-      <div className="grid gap-10 sm:grid-cols-2">
+      <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
         {skillCategories.map((category, i) => (
           <FadeIn key={category.name} delay={i * 0.06}>
             <div>

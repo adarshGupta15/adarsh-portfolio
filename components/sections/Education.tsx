@@ -23,6 +23,7 @@ export function Education() {
               <p className="mt-1 text-sm text-muted sm:text-base">
                 {education.degree}
               </p>
+              <p className="mt-1 text-sm text-muted">{education.university}</p>
             </div>
           </div>
           <div className="flex gap-6 text-sm text-muted sm:text-right">

@@ -11,10 +11,10 @@ export function CurrentlyBuilding() {
       <SectionHeading
         label="Now"
         title="Currently Building"
-        subtitle="What I'm actively working on to grow as an engineer."
+        subtitle="Active work in Machine Learning, DSA, and Mentor Academy."
       />
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {currentlyBuilding.map((item, i) => (
           <FadeIn key={item.title} delay={i * 0.08}>
             <Card hover className="h-full">
