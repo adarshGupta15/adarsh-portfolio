@@ -19,6 +19,7 @@ export function ProjectCard({ project, index, compact = false }: ProjectCardProp
     <motion.article
       initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
       whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+      animate={shouldReduceMotion ? { opacity: 1, y: 0 } : undefined}
       viewport={{ once: true, margin: "-60px" }}
       transition={
         shouldReduceMotion
@@ -34,7 +35,9 @@ export function ProjectCard({ project, index, compact = false }: ProjectCardProp
       <div
         className={`flex h-full flex-col overflow-hidden rounded-2xl border border-border ${
           compact ? "bg-background/50" : "bg-surface"
-        } transition-colors duration-300 group-hover:border-accent/25`}
+        } transition-[transform,border-color] duration-200 group-hover:border-accent/40 ${
+          shouldReduceMotion ? "" : "group-hover:-translate-y-0.5"
+        }`}
       >
         {project.image && (
           <div className="relative aspect-video shrink-0 overflow-hidden bg-background">
@@ -43,7 +46,7 @@ export function ProjectCard({ project, index, compact = false }: ProjectCardProp
               alt={`${project.title} screenshot`}
               fill
               sizes="(max-width: 768px) 100vw, 1152px"
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              className="object-cover"
             />
           </div>
         )}
@@ -110,7 +113,7 @@ export function ProjectCard({ project, index, compact = false }: ProjectCardProp
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-accent/40 hover:bg-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-px hover:border-accent/40 hover:bg-background active:translate-y-0 motion-reduce:transform-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 >
                   <Github size={16} aria-hidden="true" />
                   GitHub
@@ -121,7 +124,7 @@ export function ProjectCard({ project, index, compact = false }: ProjectCardProp
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-accent/40 hover:bg-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-px hover:border-accent/40 hover:bg-background active:translate-y-0 motion-reduce:transform-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 >
                   <ExternalLink size={16} aria-hidden="true" />
                   Live Demo

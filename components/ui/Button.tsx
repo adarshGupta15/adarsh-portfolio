@@ -20,7 +20,7 @@ export function Button({
   className,
 }: ButtonProps) {
   const base =
-    "inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-all duration-200";
+    "inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-all duration-200 hover:-translate-y-px active:translate-y-0 motion-reduce:transform-none";
 
   const variants = {
     primary: "bg-accent text-background hover:bg-accent/90",

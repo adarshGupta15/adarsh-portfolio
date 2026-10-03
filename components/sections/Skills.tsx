@@ -21,8 +21,15 @@ export function Skills() {
                 {category.name}
               </h3>
               <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <Badge key={skill}>{skill}</Badge>
+                {category.skills.map((skill, skillIndex) => (
+                  <FadeIn
+                    key={skill}
+                    delay={skillIndex * 0.035}
+                    duration={0.32}
+                    className="inline-flex"
+                  >
+                    <Badge>{skill}</Badge>
+                  </FadeIn>
                 ))}
               </div>
             </div>

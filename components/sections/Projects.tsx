@@ -6,8 +6,12 @@ import { ProjectCard } from "@/components/projects/ProjectCard";
 import { projects, siteConfig } from "@/lib/constants";
 
 export function Projects() {
-  const featuredProjects = projects.filter((project) => project.featured !== false);
-  const additionalProjects = projects.filter((project) => project.featured === false);
+  const featuredProjects = projects.filter(
+    (project) => project.featured !== false && project.upcoming !== true
+  );
+  const additionalProjects = projects.filter(
+    (project) => project.featured === false && project.upcoming !== true
+  );
 
   return (
     <SectionWrapper id="projects" size="large">

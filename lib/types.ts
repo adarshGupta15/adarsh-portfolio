@@ -6,6 +6,7 @@ export interface Project {
   implementation: string[];
   tech: string[];
   featured?: boolean;
+  upcoming?: boolean;
   githubUrl?: string;
   liveUrl?: string;
   image?: string;

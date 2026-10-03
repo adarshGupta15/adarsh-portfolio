@@ -3,12 +3,14 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X, Download } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { navLinks, siteConfig } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -39,7 +41,7 @@ export function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm text-muted transition-colors hover:text-foreground"
+                className="relative py-2 text-sm text-muted transition-colors hover:text-foreground after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-200 after:content-[''] hover:after:scale-x-100 motion-reduce:after:transition-none"
               >
                 {link.label}
               </a>
@@ -49,7 +51,7 @@ export function Navbar() {
 
         <a
           href={siteConfig.links.resume}
-          className="hidden items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-accent/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent lg:inline-flex"
+          className="hidden items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-px hover:border-accent/50 hover:bg-surface active:translate-y-0 motion-reduce:transform-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent lg:inline-flex"
         >
           <Download size={14} />
           Resume
@@ -67,21 +69,29 @@ export function Navbar() {
         </button>
       </nav>
 
-      {open && (
-        <div id="mobile-navigation" className="border-b border-border bg-background px-6 py-6 lg:hidden">
-          <ul className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="text-sm text-muted transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-            <li>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            id="mobile-navigation"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -6 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.18, ease: "easeOut" }}
+            className="border-b border-border bg-background px-6 py-6 lg:hidden"
+          >
+            <ul className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="text-sm text-muted transition-colors hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+              <li>
               <a
                 href={siteConfig.links.resume}
                 className="inline-flex items-center gap-2 text-sm font-medium text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
@@ -89,10 +99,11 @@ export function Navbar() {
                 <Download size={14} />
                 Resume
               </a>
-            </li>
-          </ul>
-        </div>
-      )}
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

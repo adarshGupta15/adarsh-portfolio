@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { FadeIn } from "@/components/animations/FadeIn";
 
 interface SectionHeadingProps {
   label: string;
@@ -16,7 +17,7 @@ export function SectionHeading({
   align = "left",
 }: SectionHeadingProps) {
   return (
-    <div
+    <FadeIn
       className={cn(
         "mb-16",
         align === "center" && "text-center",
@@ -34,6 +35,6 @@ export function SectionHeading({
           {subtitle}
         </p>
       )}
-    </div>
+    </FadeIn>
   );
 }

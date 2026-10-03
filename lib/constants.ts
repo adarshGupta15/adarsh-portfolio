@@ -78,14 +78,6 @@ export const projects: Project[] = [
     liveUrl: "https://mentor-academy.vercel.app/",
   },
   {
-    title: "Loan Approval Prediction",
-    summary: "Dataset-based prediction of loan approval from applicant data.",
-    problem: "Applications contain multiple fields relevant to a loan decision.",
-    solution: "A Random Forest model predicts approval from those fields.",
-    implementation: ["Random Forest model with Scikit-learn", "Flask application"],
-    tech: ["Python", "Machine Learning", "Scikit-learn", "Flask", "Random Forest"],
-  },
-  {
     title: "WattWise: Smart Electricity Prediction",
     summary: "Predicts household electricity consumption from profile and appliance details.",
     problem: "Estimating household usage involves appliance and environmental inputs.",
@@ -114,6 +106,7 @@ export const projects: Project[] = [
   },
   {
     title: "Hospital Service Price Comparison",
+    upcoming: true,
     summary: "Backend API for comparing hospital service prices.",
     problem: "Hospital service prices need a comparable catalog.",
     solution: "An Express API provides access to comparison data.",
